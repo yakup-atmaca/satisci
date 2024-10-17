@@ -17,7 +17,7 @@ import com.yakupatmaca.satisci.dto.SatisDTO;
 import com.yakupatmaca.satisci.service.SatisService;
 
 @RestController
-@RequestMapping("/api/satisler")
+@RequestMapping("/api/satislar")
 public class SatisController {
 
 	@Autowired
@@ -25,9 +25,9 @@ public class SatisController {
 
 	// Tüm ürünleri dönen endpoint
 	@GetMapping
-	public ResponseEntity<List<SatisDTO>> tumSatisleriGetir() {
-		List<SatisDTO> satisler = satisService.getAllSatislar();
-		return ResponseEntity.ok(satisler);
+	public ResponseEntity<List<SatisDTO>> tumSatislariGetir() {
+		List<SatisDTO> satislar = satisService.getAllSatislar();
+		return ResponseEntity.ok(satislar);
 	}
 
 	// Yeni ürün oluşturma endpoint'i

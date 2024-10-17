@@ -17,7 +17,7 @@ import com.yakupatmaca.satisci.dto.KullaniciDTO;
 import com.yakupatmaca.satisci.service.KullaniciService;
 
 @RestController
-@RequestMapping("/api/kullaniciler")
+@RequestMapping("/api/kullanicilar")
 public class KullaniciController {
 
 	@Autowired
@@ -26,8 +26,8 @@ public class KullaniciController {
 	// Tüm ürünleri dönen endpoint
 	@GetMapping
 	public ResponseEntity<List<KullaniciDTO>> tumKullanicileriGetir() {
-		List<KullaniciDTO> kullaniciler = kullaniciService.tumKullanicilariGetir();
-		return ResponseEntity.ok(kullaniciler);
+		List<KullaniciDTO> kullanicilar = kullaniciService.tumKullanicilariGetir();
+		return ResponseEntity.ok(kullanicilar);
 	}
 
 	// Yeni ürün oluşturma endpoint'i

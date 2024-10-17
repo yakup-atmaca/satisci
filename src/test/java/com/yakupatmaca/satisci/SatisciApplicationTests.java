@@ -1,10 +1,10 @@
-package com.yakupatmaca.herturlu;
+package com.yakupatmaca.satisci;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HerturluApplicationTests {
+class SatisciApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -29,12 +29,17 @@ public class MusteriService {
 	}
 
 	// Tüm kullanıcıları listeleme
-	public List<MusteriDTO> tumMusterilariGetir() {
+	public List<MusteriDTO> tumMusterileriGetir() {
 		return musteriRepository.findAll().stream().map(this::convertToDto).collect(Collectors.toList());
 	}
 
 	// ID'ye göre kullanıcı bulma
 	public Optional<MusteriDTO> musteriBul(Long id) {
+		/*
+		 * Optional<Musteri> musteri = musteriRepository.findById(id);
+		 * Optional<MusteriDTO> musteriDTO = Optional.ofNullable(convertToDto(musteri));
+		 * return musteriDTO;
+		 */
 		return musteriRepository.findById(id).map(this::convertToDto);
 	}
 
@@ -67,6 +72,15 @@ public class MusteriService {
 		// Diğer alanlar için benzer şekilde atama yap
 		return musteriDTO;
 	}
+	
+	// Entity'den DTO'ya dönüştürme metodu
+	/*
+	 * private MusteriDTO convertToDto(Optional<Musteri> musteri) { MusteriDTO
+	 * musteriDTO = new MusteriDTO(); musteriDTO.setId(musteri.get().getId());
+	 * musteriDTO.setAdi(musteri.get().getAdi());
+	 * musteriDTO.setSoyadi(musteri.get().getSoyadi()); // Diğer alanlar için benzer
+	 * şekilde atama yap return musteriDTO; }
+	 */
 
 	// DTO'dan Entity'ye dönüştürme metodu
 	private Musteri convertToEntity(MusteriDTO musteriDTO) {
